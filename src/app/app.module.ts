@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     EntrarComponent,
     RodapeComponent,
     CadastrarComponent,
+    AboutComponent,
   ],
   
   imports: [
