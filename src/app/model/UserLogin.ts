@@ -6,5 +6,4 @@ export class UserLogin{
     public foto: string
     public tipo: string
     public senha: string
-
 }

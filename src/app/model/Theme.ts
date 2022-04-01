@@ -3,7 +3,7 @@ import { Post } from "./Post"
 
 export class Theme{
 
-    public id: 0
+    public id: number
     public description: string
     public post: Post[]
     public topic: string
