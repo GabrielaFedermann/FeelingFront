@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ThemeComponent } from './theme/theme.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     CadastrarComponent,
     AboutComponent,
     HomeComponent,
+    ThemeComponent,
   ],
   
   imports: [
