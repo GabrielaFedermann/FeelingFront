@@ -9,29 +9,29 @@
                     <div class="form-group">
 
                         <label for="nome">Nome</label>
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+                        <input [(ngModel)]="user.name" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
                     </div>
 
                     <div class="form-group">
 
                         <label for="usuario">Usuário</label>
-                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuario">
+                        <input [(ngModel)]="user.email" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuario">
                     </div>
                     <div class="form-group">
 
                         <label for="foto">Link da foto</label>
-                        <input class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                        <input [(ngModel)]="user.photo" class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
                     </div>
 
                     <div class="form-group">
 
                         <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input (input)="confirmPassword($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
                     </div>
                     <div class="form-group">
 
                         <label for="confirmSenha">Confirmar senha</label>
-                        <input class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+                        <input [(ngModel)]="user.password" class="form-control" type="password" name="confirmSenha" id="confirmSenha"
                             placeholder="Confirme sua senha">
 
                     </div>
@@ -48,7 +48,7 @@
                     <hr> 
                     <div class="d-flex justify-content-center">
                         <a routerLink="/entrar"><button type="submit" class="btn btn-danger mr-4">Cancelar</button></a>
-                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" (click)="register()">Cadastrar</button>
                     </div>
                 </div>
             </div>
