@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
 import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { PostEditComponent } from './edit/post-edit/post-edit.component';
     ThemeComponent,
     ThemeEditComponent,
     PostEditComponent,
+    ThemeDeleteComponent,
+    PostDeleteComponent,
   ],
   
   imports: [
