@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
     HomeComponent,
     ThemeComponent,
     ThemeEditComponent,
+    PostEditComponent,
   ],
   
   imports: [
