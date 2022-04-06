@@ -1,4 +1,5 @@
 import { Theme } from "./Theme"
+import { UserModel } from "./User"
 
 export class Post{
     public id: number
@@ -8,5 +9,6 @@ export class Post{
     public anonymous: boolean
     public picture: string
     public theme: Theme
+    public creator: UserModel
     
 }
