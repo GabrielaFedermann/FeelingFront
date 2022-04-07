@@ -5,3 +5,40 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.borda {
+    border: none;
+}
+
+.tam {
+    height: 90vh;
+}
+
+.bg {
+    background-color: var(--color-primary);
+}
+
+.bg-nav {
+background-color: var(--color-purple);
+}
+
+.text-nav {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.perfil {
+    border-radius: 50%;
+    width: 12vw;
+}
+
+.sobre {
+    font-size: 80px;
+    color: #fff;
+}
+
+.bg-form {
+    background-color: var(--color-green);
+    border-radius: 16px;
+}
