@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ThemeComponent } from './theme/theme.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -25,13 +27,15 @@ import { ThemeComponent } from './theme/theme.component';
     AboutComponent,
     HomeComponent,
     ThemeComponent,
+    AlertsComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
