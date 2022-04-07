@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/model/Post';
 import { Theme } from 'src/app/model/Theme';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { PostService } from 'src/app/service/post.service';
 import { ThemeService } from 'src/app/service/theme.service';
 import { environment } from 'src/environments/environment.prod';
@@ -22,12 +23,13 @@ export class PostEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postService: PostService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private alertService: AlertsService
   ) {}
 
   ngOnInit() {
     if (environment.token == '') {
-      alert('Sua sessão expirou, por favor faça login novamente!');
+      this.alertService.showAlertWarning('Sua sessão expirou, por favor faça login novamente!');
       this.router.navigate(['/login']);
     }
 
@@ -62,7 +64,7 @@ export class PostEditComponent implements OnInit {
 
     this.postService.putPost(this.post).subscribe((resp: Post) => {
       this.post = resp;
-      alert('Postagem atualizada com sucesso!');
+      this.alertService.showAlertSuccess('Postagem atualizada com sucesso!');
       this.router.navigate(['/home']);
     });
   }
