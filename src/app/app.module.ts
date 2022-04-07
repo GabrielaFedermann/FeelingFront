@@ -17,6 +17,8 @@ import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
 import { PostEditComponent } from './edit/post-edit/post-edit.component';
 import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
 import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -33,13 +35,15 @@ import { PostDeleteComponent } from './delete/post-delete/post-delete.component'
     PostEditComponent,
     ThemeDeleteComponent,
     PostDeleteComponent,
+    AlertsComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/model/Post';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { PostService } from 'src/app/service/post.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,12 +18,13 @@ export class PostDeleteComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private postService: PostService
+    private postService: PostService,
+    private alertService: AlertsService
   ) {}
 
   ngOnInit() {
     if (environment.token == '') {
-      alert('Sua sessão expirou, por favor faça login novamente!');
+      this.alertService.showAlertWarning('Sua sessão expirou, por favor faça login novamente!');
       this.router.navigate(['/login']);
     }
 
@@ -43,7 +45,7 @@ export class PostDeleteComponent implements OnInit {
 
   delete() {
     this.postService.deletePost(this.idPost).subscribe(() => {
-      alert('Postagem deletada com sucesso!');
+      this.alertService.showAlertSuccess('Postagem deletada com sucesso!');
       this.router.navigate(['/home']);
     });
   }
