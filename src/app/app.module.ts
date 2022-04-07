@@ -13,6 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ThemeComponent } from './theme/theme.component';
+import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -27,6 +31,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AboutComponent,
     HomeComponent,
     ThemeComponent,
+    ThemeEditComponent,
+    PostEditComponent,
+    ThemeDeleteComponent,
+    PostDeleteComponent,
     AlertsComponent,
   ],
 
