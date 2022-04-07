@@ -35,10 +35,15 @@ export class ThemeComponent implements OnInit {
   }
 
   registerTheme() {
+
     this.themeService.postTheme(this.theme).subscribe((resp: Theme) => {
+     
       this.theme = resp
       alert('Tema cadastrado com sucesso!')
       this.theme = new Theme()
+      this.findAllTheme()
+
     })
   }
+
 }
