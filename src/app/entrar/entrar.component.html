@@ -1,37 +1,111 @@
-<div class="container-fluid">
-    <div class="row d-flex align-items-center">
-
-        <div class="col-md-6 ">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="text-center mb-3 animate-charcter">Entrar</h1>
-
-                    <form>
-                        <div class="form-group">
-                            <label class="" for="">E-mail</label>
-                            <input [(ngModel)]="userLogin.email" class="form-control" type="text" placeholder="Digite seu e-mail" name="email">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="" for="">Senha</label>
-                            <input [(ngModel)]="userLogin.password" name="password" class="form-control" type="password" placeholder="Digite sua senha">
-                        </div>
-
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" (click)="enter()" class="btn btn-success mt-3 botao">Logar</button>
-                        </div>
-
-                        <hr class="mb-5 mt-5">
-
-                        <p class="text-center">
-                            Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
-                        </p>
-                    </form>
-                </div>
+<div class="container-fluid bg">
+    <div class="row">
+        <div class="col-md-12 bg-nav">
+            <div class="d-flex justify-content-between mt-2 mb-2">
+                <h3>Feeling</h3>
+                <button class="btn btn-info">Entrar</button>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <img src="../../assets/img/Logo Pessoa.png" class="tam w-100" alt="">
+        </div>
+    </div>
+    <div class="row bg-nav">
+        <div class="col-md-12 d-flex justify-content-center">
+            <nav class="nav">
+                <a class="nav-link active text-nav" href="#feeling">Feeling</a>
+                <a class="nav-link text-nav" href="#sobre">Sobre Nós</a>
+                <a class="nav-link text-nav" href="#contato">Contato</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row" id="feeling">
+        <div class="col-md-6">
+            <img class="w-100 h-75 mt-5" src="https://atlasodsamazonas.ufam.edu.br/images/SDG-icon-PT-03.jpg" alt="">
+        </div>
+        <div class="col-md-6 mt-5">
+            <h2 class="text-center">teste</h2>
+            <h4 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ipsam quidem?
+                Officiis animi porro nisi vitae quos possimus culpa corporis similique odio? Quisquam quasi, voluptatem,
+                quibusdam modi est, fuga voluptate reiciendis eius rerum molestias provident ipsum! Porro quia quae
+                velit ipsa qui impedit et dolores labore laborum molestias. Modi sed repellendus minima consequatur
+                reiciendis, cum distinctio tempora perferendis qui enim nobis necessitatibus, explicabo repellat
+                veritatis earum quaerat. Odio, laborum cum! Ratione amet sint architecto ad similique suscipit saepe
+                nisi voluptatibus porro? Quis, cum cupiditate aspernatur atque ratione laborum earum ipsum officia.
+                Perspiciatis repudiandae eius expedita, porro pariatur asperiores nulla natus!</h4>
+        </div>
+    </div>
 
-        <div class="col-md-6" id="img-bg"></div>
+    <div class="row bg pb-5" id="sobre">
+        <div class="col-md-12">
+            <h2 class="text-center sobre">Sobre Nós</h2>
+        </div>
+    </div>
 
+    <div class="row bg">
+        <div class="col-md-12 d-flex justify-content-around">
+            <div class="col-md-3">
+                <div class="d-flex justify-content-center">
+                    <img class="perfil d-flex justify-content-center"
+                        src="https://i.pinimg.com/736x/5a/72/e1/5a72e1f05f9e2e1b76a8438a7490dc3b.jpg" alt="">
+                </div>
+                <h3 class="text-center">Nome generito</h3>
+                <h4 class="text-center">coisa generica</h4>
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odio fugiat soluta
+                    aperiam! Cumque voluptas assumenda commodi debitis ullam nostrum molestiae maxime corrupti ea optio
+                    veritatis non aliquam nisi, doloremque hic voluptates cum temporibus aut. Quasi odio accusamus a aut
+                    deserunt veniam, quisquam est illum vitae, numquam dicta neque. Dolorum!</p>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex justify-content-center">
+                    <img class="perfil d-flex justify-content-center"
+                        src="https://i.pinimg.com/736x/5a/72/e1/5a72e1f05f9e2e1b76a8438a7490dc3b.jpg" alt="">
+                </div>
+                <h3 class="text-center">Nome generito</h3>
+                <h4 class="text-center">coisa generica</h4>
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odio fugiat soluta
+                    aperiam! Cumque voluptas assumenda commodi debitis ullam nostrum molestiae maxime corrupti ea optio
+                    veritatis non aliquam nisi, doloremque hic voluptates cum temporibus aut. Quasi odio accusamus a aut
+                    deserunt veniam, quisquam est illum vitae, numquam dicta neque. Dolorum!</p>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex justify-content-center">
+                    <img class="perfil d-flex justify-content-center"
+                        src="https://i.pinimg.com/736x/5a/72/e1/5a72e1f05f9e2e1b76a8438a7490dc3b.jpg" alt="">
+                </div>
+                <h3 class="text-center">Nome generito</h3>
+                <h4 class="text-center">coisa generica</h4>
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odio fugiat soluta
+                    aperiam! Cumque voluptas assumenda commodi debitis ullam nostrum molestiae maxime corrupti ea optio
+                    veritatis non aliquam nisi, doloremque hic voluptates cum temporibus aut. Quasi odio accusamus a aut
+                    deserunt veniam, quisquam est illum vitae, numquam dicta neque. Dolorum!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 pb-5" id="contato">
+        <div class="row bg-form">
+            <div class="col-md-12 p-4">
+                <h2 class="text-center">Entre em contato com a gente!</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nome</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">E-mail</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group form-check p-0">
+                        <div>
+                            <textarea placeholder="Digite aqui o assunto" class="form-control mt-4" name="assunto" id="assunto" cols="30"
+                                rows="7"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
