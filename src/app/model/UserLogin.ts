@@ -1,9 +1,12 @@
+import { Post } from "./Post"
+
 export class UserLogin{
     public id: number
     public token: string
-    public nome: string
-    public usuario: string
-    public foto: string
-    public tipo: string
-    public senha: string
+    public name: string
+    public email: string
+    public photo: string
+    public type: string
+    public password: string
+    public post: Post[]
 }
