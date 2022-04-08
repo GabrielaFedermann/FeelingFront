@@ -45,9 +45,8 @@ export class HomeComponent implements OnInit {
     this.postService.refreshToken();
     this.getAllTheme()
     this.findByIdUser()
-    console.log(this.idUser)
     this.getAllPosts()
-    console.log(this.user.post)
+    console.log(this.idUser)
   }
 
   getAllTheme() {
@@ -76,7 +75,7 @@ export class HomeComponent implements OnInit {
     this.post.theme = this.theme;
 
     this.user.id = this.idUser;
-    this.post.creator = this.user;
+    this.post.user = this.user;
 
     this.postService.postPost(this.post).subscribe((resp: Post) => {
       this.post = resp;

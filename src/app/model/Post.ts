@@ -9,6 +9,6 @@ export class Post{
     public anonymous: boolean
     public picture: string
     public theme: Theme
-    public creator: UserModel
-    
+    public user: UserModel
+
 }
