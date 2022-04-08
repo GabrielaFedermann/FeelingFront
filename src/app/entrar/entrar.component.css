@@ -6,6 +6,12 @@
     background-size: cover;
 }
 
+h3 {
+    font-family: 'Allura', cursive;
+    margin: 0;
+    font-size: 45px;
+}
+
 .borda {
     border: none;
 }
@@ -35,7 +41,8 @@ background-color: var(--color-purple);
 
 .sobre {
     font-size: 80px;
-    color: #fff;
+    color: black;
+    background-color: var(--color-purple);
 }
 
 .bg-form {
