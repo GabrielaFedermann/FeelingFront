@@ -1,4 +1,4 @@
-import { Post } from "FeelingFront/src/app/model/Post"
+import { Post } from "./Post";
 
 
 export class UserModel{
