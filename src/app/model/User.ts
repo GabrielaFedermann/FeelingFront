@@ -1,4 +1,4 @@
-
+import { Post } from "FeelingFront/src/app/model/Post"
 
 
 export class UserModel{
@@ -9,5 +9,6 @@ export class UserModel{
     public photo:  string
     public type: string
     public token: string
+    public post: Post[]
 
 }

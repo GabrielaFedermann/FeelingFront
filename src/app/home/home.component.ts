@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment.prod';
 import { Post } from '../model/Post';
 import { Theme } from '../model/Theme';
 import { UserModel } from '../model/User';
-import { UserLogin } from '../model/UserLogin';
 import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 import { PostService } from '../service/post.service';
@@ -42,10 +41,13 @@ export class HomeComponent implements OnInit {
       this.route.navigate(['/entrar']);
     }
     this.themeService.refreshToken();
-    // this.authService.refreshToken();
+    this.authService.refreshToken();
     this.postService.refreshToken();
     this.getAllTheme()
+    this.findByIdUser()
+    console.log(this.idUser)
     this.getAllPosts()
+    console.log(this.user.post)
   }
 
   getAllTheme() {
@@ -64,11 +66,11 @@ export class HomeComponent implements OnInit {
       console.log(this.posts)
     })
   }
-  // findByIdUser(){
-  //   this.authService.getByIdUser(this.idUser).subscribe((resp: UserModel)=>{
-  //     this.user = resp;
-  //   })
-  // }
+  findByIdUser() {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: UserModel) => {
+      this.user = resp;
+    })
+  }
   publish() {
     this.theme.id = this.idTheme;
     this.post.theme = this.theme;
@@ -81,6 +83,7 @@ export class HomeComponent implements OnInit {
       this.alertService.showAlertSuccess('Postagem realizada com sucesso!!! :D');
 
       this.getAllPosts();
+      this.findByIdUser();
 
       this.post = new Post();
     });

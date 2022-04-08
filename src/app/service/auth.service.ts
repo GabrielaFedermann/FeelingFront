@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { UserLoginDTO } from "../model/UserLoginDTO";
 import { UserModel } from "../model/User";
@@ -10,6 +10,17 @@ import { environment } from "src/environments/environment.prod";
 })
 export class AuthService {
   constructor(private http: HttpClient){}
+  
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  };
+
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
+
 
   enter(userLogin: UserLoginDTO): Observable<UserLoginDTO>{
     return this.http.post<UserLoginDTO>('https://genfeeling.herokuapp.com/user/login', userLogin)
@@ -25,6 +36,10 @@ export class AuthService {
       ok = true;
     }
     return ok;
+  }
+
+  getByIdUser(id: number): Observable<UserModel>{
+    return this.http.get<UserModel>(`https://genfeeling.herokuapp.com/user/id/${id}`, this.token )
   }
 
 
