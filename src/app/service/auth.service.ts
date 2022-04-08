@@ -42,5 +42,8 @@ export class AuthService {
     return this.http.get<UserModel>(`https://genfeeling.herokuapp.com/user/id/${id}`, this.token )
   }
 
+  update(user: UserModel): Observable<UserModel> {
+    return this.http.put<UserModel>('https://genfeeling.herokuapp.com/user/update', user, this.token);
+  }
 
 }
