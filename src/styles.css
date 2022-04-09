@@ -6,9 +6,10 @@
     --color-green: #A8C59E;
 }
 
-textarea:focus, input:focus, select:focus 
-{ 
-  border-color: rgba(140, 0, 255, 0.25) !important; 
+textarea:focus, input:focus, select:focus
+{
+  border-color: rgba(140, 0, 255, 0.25) !important;
   box-shadow: 0 0 0 0.1rem rgba(140, 0, 255, 0.25) !important;
 }
+
 
