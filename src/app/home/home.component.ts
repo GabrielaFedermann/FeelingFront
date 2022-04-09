@@ -26,6 +26,8 @@ export class HomeComponent implements OnInit {
   idUser = environment.id;
 
 
+  photo = environment.photo;
+
   constructor(
     private route: Router,
     private postService: PostService,
