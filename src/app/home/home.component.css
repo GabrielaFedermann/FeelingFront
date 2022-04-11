@@ -121,5 +121,43 @@ body{
     margin-bottom: 0;
   }
 
-  
+  .post{
+    color: rgb(0, 0, 0);            
+    font-family: 'Merriweather', serif;
+    background:  #c1bce7f3;
+    backdrop-filter: blur (10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 
+.font{
+  color:black;
+  font-family: 'Merriweather', serif;
+  width: 400;
+}
+
+.borda{
+  border-radius: 10px;
+}
+
+.bordamodal{
+  border-radius: 20px;
+}
+
+.cancelar{
+  background-color: #d66da0;;
+  color: white;
+}
+
+.enviar{
+  background-color: #98c589;
+  color:white
+}
+
+.white{
+  color: #d66da0;
+  font-weight: 700;
+}
+
+.btnpost{
+  background-color: #e2a3c1 ;
+}
