@@ -10,7 +10,7 @@ import { environment } from "src/environments/environment.prod";
 })
 export class AuthService {
   constructor(private http: HttpClient){}
-  
+
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
@@ -44,6 +44,11 @@ export class AuthService {
 
   update(user: UserModel): Observable<UserModel> {
     return this.http.put<UserModel>('https://genfeeling.herokuapp.com/user/update', user, this.token);
+  }
+
+  edit(){
+    let ok: boolean = environment.edit
+    return ok
   }
 
 }

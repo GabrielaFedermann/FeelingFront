@@ -52,6 +52,10 @@ export class UserEditComponent implements OnInit {
     });
   }
 
+  cancel(){
+    environment.edit = true;
+  }
+
   update() {
     this.user.type = this.tyUser;
     console.log(this.user);
@@ -66,6 +70,7 @@ export class UserEditComponent implements OnInit {
         environment.name = '';
         environment.id = 0;
         environment.photo= '';
+        environment.edit = true;
 
         this.router.navigate(['/entrar']);
       });
