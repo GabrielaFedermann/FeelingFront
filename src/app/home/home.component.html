@@ -5,11 +5,11 @@
         <div class="card card-profile">
           <div style="
               background-image: url(https://demo.bootstrapious.com/admin-premium/1-4-5/img/photos/paul-morris-116514-unsplash.jpg);
-            " class="card-header testeee"></div>
+            " class="card-header"></div>
           <div class="card-body text-center">
             <img src="{{ photo }}" width="250px" height="200px" class="card-profile-img" />
             <h3 class="mb-3">{{user.name}}</h3>
-            <button class="btn btn-dark mr-2" data-toggle="modal" data-target="#novaPostagem">
+            <button class="btn btn-dark mr-2 w-75 rounded-pill" data-toggle="modal" data-target="#novaPostagem">
               Nova postagem
             </button>
           </div>
@@ -22,7 +22,7 @@
       <!--Time Line-->
       <div class="col-lg-8">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header rounded">
             <!--Seja bem vinde/ Postagem-->
             <div class="col-md-12">
               <h1 class="fs-47 text-color1">Seja bem vinde!</h1>
@@ -54,6 +54,12 @@
                     <div class="form-group">
                       <label for="texto">Texto</label>
                       <textarea [(ngModel)]="post.text" class="form-control" name="" id="texto" rows="3"></textarea>
+                    </div>
+
+                    <div>
+                      <label for="">Foto</label>
+                      <input [(ngModel)]="post.picture" type="text" class="form-control" id="foto"
+                        placeholder="Link da foto (opcional)" name="foto" />
                     </div>
 
                     <div class="form-group">
@@ -124,7 +130,7 @@
                                 </div>
                                 <div class="text-muted text-small text-break">
                                   <img class="w-100 mb-3 rounded"
-                                    src="https://cdn1.epicgames.com/offer/fn/PDP_2560x1440_2560x1440-bec2627607d1aeae77fc43d495900ddf"
+                                    src="{{post.picture}}"
                                     alt="">
                                 </div>
                                 <div class='align-self-end'>
@@ -168,7 +174,7 @@
                                 </div>
                                 <div class="text-muted text-small text-break">
                                   <img class="w-100 mb-3 rounded"
-                                    src="https://cdn1.epicgames.com/offer/fn/PDP_2560x1440_2560x1440-bec2627607d1aeae77fc43d495900ddf"
+                                    src="{{post.picture}}"
                                     alt="">
                                 </div>
                                 <div class='align-self-end'>
@@ -185,41 +191,40 @@
 
 
 
-                <div class="tab-content" id="nav-tabContent">
+                
                   <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
                     <div class="row d-flex flex-wrap mt-3">
                       <div class="col-md-12" *ngFor="let theme of themeList">
-                        <h2>{{ theme.description }}</h2>
-                        <div *ngFor="let item of theme.post" class="card text-center">
-                          
-                        </div>
-                        <div class="border rounded mb-5">
-                          <div class="list-group card-list-group">
-                            <div class="list-group-item py-5">
-                              <div class="media">
-                                <div class="media-object avatar avatar-md mr-3 ">
-                                  <img class="ttt" src="{{post.user.photo}}" alt="foto">
-                                </div>
-                                <div class="media-body">
-                                  <div class="media-heading">
-                                    <small class="float-right">{{post.date | date: 'dd/MM/yyyy'}} às {{post.date | date:
-                                      'HH:mm'}}</small>
-                                    <h4>{{post.user.name}}</h4>
+                        <h2 class="text-center font-mariele-b mb-4 mt-2">{{ theme.topic }}</h2>
+                        <div *ngFor="let post of theme.post" class="text-start">
+                          <div class="border rounded mb-5">
+                            <div class="list-group card-list-group">
+                              <div class="list-group-item py-5">
+                                <div class="media">
+                                  <div class="media-object avatar avatar-md mr-3 ">
+                                    <img class="ttt" src="{{post.user.photo}}" alt="foto">
                                   </div>
-                                  <div class="font-weight-bold font-mariele-b text-break">
-                                    <h5 class="mt-3">{{post.title}}</h5>
-                                  </div>
-                                  <div class="text-small text-muted text-break">
-                                    <p>{{post.text}}</p>
-                                  </div>
-                                  <div class="text-muted text-small text-break">
-                                    <img class="w-100 mb-3 rounded"
-                                      src="https://cdn1.epicgames.com/offer/fn/PDP_2560x1440_2560x1440-bec2627607d1aeae77fc43d495900ddf"
-                                      alt="">
-                                  </div>
-                                  <div class='align-self-end'>
-                                    <i class="fa fa-tags radius p-2 bg-gray" aria-hidden="true">
-                                      {{post.theme.topic}}</i>
+                                  <div class="media-body">
+                                    <div class="media-heading">
+                                      <small class="float-right">{{post.date | date: 'dd/MM/yyyy'}} às {{post.date | date:
+                                        'HH:mm'}}</small>
+                                      <h4>{{post.user.name}}</h4>
+                                    </div>
+                                    <div class="font-weight-bold font-mariele-b text-break">
+                                      <h5 class="mt-3">{{post.title}}</h5>
+                                    </div>
+                                    <div class="text-small text-muted text-break">
+                                      <p>{{post.text}}</p>
+                                    </div>
+                                    <div class="text-muted text-small text-break">
+                                      <img class="w-100 mb-3 rounded"
+                                        src="{{post.picture}}"
+                                        alt="">
+                                    </div>
+                                    <div class='align-self-end'>
+                                      <i class="fa fa-tags radius p-2 bg-gray" aria-hidden="true">
+                                        {{theme.topic}}</i>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -230,7 +235,7 @@
                     </div>
                   </div>
 
-                  <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
+                  <!-- <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
               
                     <div *ngFor="let theme of themeList" class="card-columns mt-4">
                       <h2>{{ theme.description }}</h2>
@@ -252,7 +257,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!--Messege-->
 

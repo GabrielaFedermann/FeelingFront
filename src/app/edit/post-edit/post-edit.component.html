@@ -19,6 +19,11 @@
                 <textarea [(ngModel)]="post.text" name="text" class="form-control" rows="4"
                     placeholder="Digite o texto"></textarea>
             </div>
+            <div>
+                <label for="">Foto</label>
+                <input [(ngModel)]="post.picture" type="text" class="form-control" id="foto"
+                    placeholder="Link da foto (opcional)" name="foto" />
+            </div>
             <div class="form-group">
                 <label for="">Escolha um tema:</label>
                 <select name="theme" id="theme" [(ngModel)]="idTheme" (change)="findByIdTheme" class="form-control">

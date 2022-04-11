@@ -30,7 +30,7 @@ export class UserEditComponent implements OnInit {
 
     if (environment.token == '') {
       this.alertService.showAlertWarning('Sua sessão expirou, faça o login novamente');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/entrar']);
     }
 
     this.idUser = this.route.snapshot.params['id'];
