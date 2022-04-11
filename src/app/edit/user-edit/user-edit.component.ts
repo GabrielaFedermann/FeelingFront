@@ -18,6 +18,8 @@ export class UserEditComponent implements OnInit {
   confPassword: string;
   tyUser: string;
 
+  password: string;
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -37,10 +39,6 @@ export class UserEditComponent implements OnInit {
     this.findByIdUser(this.idUser);
   }
 
-  confirmPassword(event: any) {
-    this.confPassword = event.target.value;
-  }
-
   typeUser(event: any) {
     this.tyUser = event.target.value;
   }
@@ -54,6 +52,44 @@ export class UserEditComponent implements OnInit {
 
   cancel(){
     environment.edit = true;
+  }
+
+  confirmPassword(event: any) {
+    this.password = event.target.value;
+  }
+
+  validEmail(){
+    let txt = (<HTMLDivElement>document.querySelector('#txtUser'))
+    let regex = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}'
+    if (this.user.email.match(regex)) {
+      txt.innerHTML = 'Email válido'
+      txt.style.color = 'green'
+    } else {
+      txt.innerHTML = 'Email inválido'
+      txt.style.color = 'red'
+    }
+  }
+
+  validPassword(){
+    let txt = (<HTMLDivElement>document.querySelector('#txtPassword'))
+    if (this.password.length >= 6) {
+      txt.innerHTML = 'Senha válida'
+      txt.style.color = 'green'
+    } else {
+      txt.innerHTML = 'Senha inválida, deve ter no mínimo 6 caracteres'
+      txt.style.color = 'red'
+    }
+  }
+
+  validPass(){
+    let txt = (<HTMLDivElement>document.querySelector('#txtPass'))
+    if (this.password == this.user.password) {
+      txt.innerHTML = 'Senhas coincidem'
+      txt.style.color = 'green'
+    } else {
+      txt.innerHTML = 'Senhas não coincidem'
+      txt.style.color = 'red'
+    }
   }
 
   update() {
