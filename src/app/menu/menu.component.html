@@ -10,8 +10,29 @@
             class="sr-only">(current)</span></a>
     </ul>
 
-    <a (click)="logout()" href="#" class="text-dark fontex pr-3">Configurações  <i class="fa fa-cog" aria-hidden="true"></i>
+    <div class="dropleft mr-4">
+      <a class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+        Configurações <i class="fa fa-cog" aria-hidden="true"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item pointer" href="#">Perfil</a>
+        <a class="dropdown-item pointer" (click)="logout()" >Sair </a>
+        
+      </div>
+    </div>
+
+    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+      Configurações  <i class="fa fa-cog" aria-hidden="true"></i>
 
     </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div> -->
+
+    <!-- <a (click)="logout()" href="#" class="text-dark fontex pr-3">Configurações  <i class="fa fa-cog" aria-hidden="true"></i>
+    </a> -->
   </div>
 </nav>

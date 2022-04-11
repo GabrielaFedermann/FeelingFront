@@ -48,13 +48,11 @@ export class HomeComponent implements OnInit {
     this.getAllTheme()
     this.findByIdUser()
     this.getAllPosts()
-    console.log(this.idUser)
   }
 
   getAllTheme() {
     this.themeService.getAllTheme().subscribe((resp: Theme[]) => {
       this.themeList = resp;
-      console.log (this.themeList)
     });
   }
   findByIdTheme() {
@@ -65,7 +63,6 @@ export class HomeComponent implements OnInit {
   getAllPosts() {
     this.postService.getAllPost().subscribe((resp: Post[]) => {
       this.posts = resp;
-      console.log(this.posts)
     })
   }
   findByIdUser() {
