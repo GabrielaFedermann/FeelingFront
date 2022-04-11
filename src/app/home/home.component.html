@@ -1,52 +1,22 @@
-<div class="container-fluid bg">
+<div class="container-fluid bg pt-3">
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
         <div class="card card-profile">
-          <div
-            style="
+          <div style="
               background-image: url(https://demo.bootstrapious.com/admin-premium/1-4-5/img/photos/paul-morris-116514-unsplash.jpg);
-            "
-            class="card-header"
-          ></div>
+            " class="card-header testeee"></div>
           <div class="card-body text-center">
-            <img
-              src="{{ photo }}"
-              width="250px"
-              height="250px"
-              class="card-profile-img"
-            />
-            <h3 class="mb-3">John Doe</h3>
-            <p class="mb-4">
-              One morning, when Gregor Samsa woke from troubled
-            </p>
-            <button class="btn btn-outline-dark btn-sm">
-              <span class="fa fa-twitter"></span> Follow
+            <img src="{{ photo }}" width="250px" height="200px" class="card-profile-img" />
+            <h3 class="mb-3">{{user.name}}</h3>
+            <button class="btn btn-dark mr-2" data-toggle="modal" data-target="#novaPostagem">
+              Nova postagem
             </button>
           </div>
         </div>
 
-        <!--Nova postagem-->
-        <div class="row mt-3 mb-5">
-          <div class="col-md-6">
-            <button
-              class="btn btn-light mr-2"
-              data-toggle="modal"
-              data-target="#novaPostagem"
-            >
-              Nova postagem
-            </button>
-            <a class="btn btn-outline-light" href="#postagens">Ver postagens</a>
-          </div>
-          <div class="input-group">
-            <input type="text" placeholder="Message" class="form-control" />
-            <div class="input-group-append">
-              <button type="button" class="btn btn-outline-secondary">
-                <i class="fa fa-send"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
       <!--Time Line-->
@@ -54,97 +24,56 @@
         <div class="card">
           <div class="card-header">
             <!--Seja bem vinde/ Postagem-->
-            <div class="col-md-6">
+            <div class="col-md-12">
               <h1 class="fs-47 text-color1">Seja bem vinde!</h1>
               <h5 class="fs-18">
-                Expresse aqui os seus pensamentos e opiniões.
+
               </h5>
             </div>
 
             <!-- Modal -->
-            <div
-              class="modal fade"
-              id="novaPostagem"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="TituloModalCentralizado"
-              aria-hidden="true"
-            >
+            <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog"
+              aria-labelledby="TituloModalCentralizado" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="TituloModalCentralizado">
                       Nova postagem
                     </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Fechar"
-                    >
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="titulo">Título</label>
-                      <input
-                        [(ngModel)]="post.title"
-                        type="text"
-                        class="form-control"
-                        id="titulo"
-                        placeholder="Digite o título"
-                      />
+                      <input [(ngModel)]="post.title" type="text" class="form-control" id="titulo"
+                        placeholder="Digite o título" />
                     </div>
 
                     <div class="form-group">
                       <label for="texto">Texto</label>
-                      <textarea
-                        [(ngModel)]="post.text"
-                        class="form-control"
-                        name=""
-                        id="texto"
-                        rows="3"
-                      ></textarea>
+                      <textarea [(ngModel)]="post.text" class="form-control" name="" id="texto" rows="3"></textarea>
                     </div>
 
                     <div class="form-group">
-                      <label for="texto"
-                        >Escolha um tema ou
-                        <a data-dismiss="modal" routerLink="/theme"
-                          >cadastre um novo</a
-                        >:
+                      <label for="texto">Escolha um tema ou
+                        <a data-dismiss="modal" routerLink="/theme">cadastre um novo</a>:
                       </label>
-                      <select
-                        [(ngModel)]="idTheme"
-                        (change)="findByIdTheme()"
-                        name="tema"
-                        id="tema"
-                        class="form-control"
-                      >
+                      <select [(ngModel)]="idTheme" (change)="findByIdTheme()" name="tema" id="tema"
+                        class="form-control">
                         <option selected disabled value="">Temas</option>
-                        <option
-                          *ngFor="let theme of themeList"
-                          value="{{ theme.id }}"
-                        >
+                        <option *ngFor="let theme of themeList" value="{{ theme.id }}">
                           {{ theme.topic }}
                         </option>
                       </select>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-danger"
-                      data-dismiss="modal"
-                    >
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
                       Cancelar
                     </button>
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      (click)="publish()"
-                    >
+                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)="publish()">
                       Publicar
                     </button>
                   </div>
@@ -156,119 +85,118 @@
             <!--Nav postagens-->
             <div class="container mb-5 mt-5" id="postagens">
               <nav>
-                <div
-                  class="nav nav-tabs d-flex justify-content-center"
-                  id="nav-tab"
-                  role="tablist"
-                >
-                  <a
-                    class="nav-item nav-link active text-secondary font-weight-bold"
-                    id="nav-todasPostagens-tab"
-                    data-toggle="tab"
-                    href="#todasPostagens"
-                    role="tab"
-                    aria-controls="nav-todasPostagens"
-                    aria-selected="true"
-                    >Todas as postagens</a
-                  >
-                  <a
-                    class="nav-item nav-link text-secondary font-weight-bold"
-                    id="nav-minhasPostagens-tab"
-                    data-toggle="tab"
-                    href="#minhasPostagens"
-                    role="tab"
-                    aria-controls="nav-minhasPostagens"
-                    aria-selected="false"
-                    >Minhas postagens</a
-                  >
-                  <a
-                    class="nav-item nav-link text-secondary font-weight-bold"
-                    id="nav-postagensTema-tab"
-                    data-toggle="tab"
-                    href="#postagensTema"
-                    role="tab"
-                    aria-controls="nav-postagensTema"
-                    aria-selected="false"
-                    >Postagens por tema</a
-                  >
+                <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
+                    data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
+                    aria-selected="true">Todas as postagens</a>
+                  <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab"
+                    data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
+                    aria-selected="false">Minhas postagens</a>
+                  <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagensTema-tab"
+                    data-toggle="tab" href="#postagensTema" role="tab" aria-controls="nav-postagensTema"
+                    aria-selected="false">Postagens por tema</a>
                 </div>
               </nav>
 
               <div class="tab-content" id="nav-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="todasPostagens"
-                  role="tabpanel"
-                  aria-labelledby="nav-todasPostagens-tab"
-                >
-                  <div class="row d-flex flex-wrap">
-                    <div class="col-md-4" *ngFor="let post of posts">
-                      <div class="border rounded">
-                        <h4>{{ post.title }}</h4>
-                        <p>{{ post.text }}</p>
-                        <p>{{ post.date }}</p>
+                <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+                  aria-labelledby="nav-todasPostagens-tab">
+                  <div class="row d-flex flex-wrap mt-3">
+                    <div class="col-md-12" *ngFor="let post of posts">
+                      <div class="border rounded mb-5">
+                        <div class="list-group card-list-group">
+                          <div class="list-group-item py-5">
+                            <div class="media">
+                              <div class="media-object avatar avatar-md mr-3 ">
+                                <img class="ttt" src="{{post.user.photo}}" alt="foto">
+                              </div>
+                              <div class="media-body">
+                                <div class="media-heading">
+                                  <small class="float-right">{{post.date | date: 'dd/MM/yyyy'}} às {{post.date | date:
+                                    'HH:mm'}}</small>
+                                  <h4>{{post.user.name}}</h4>
+                                </div>
+                                <div class="font-weight-bold font-mariele-b text-break">
+                                  <h5 class="mt-3">{{post.title}}</h5>
+                                </div>
+                                <div class="text-small text-muted text-break">
+                                  <p>{{post.text}}</p>
+                                </div>
+                                <div class="text-muted text-small text-break">
+                                  <img class="w-100 mb-3 rounded"
+                                    src="https://cdn1.epicgames.com/offer/fn/PDP_2560x1440_2560x1440-bec2627607d1aeae77fc43d495900ddf"
+                                    alt="">
+                                </div>
+                                <div class='align-self-end'>
+                                  <i class="fa fa-tags radius p-2 bg-gray" aria-hidden="true"> {{post.theme.topic}}</i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="minhasPostagens"
-                  role="tabpanel"
-                  aria-labelledby="nav-minhasPostagens-tab"
-                >
-                  <div class="row d-flex flex-wrap">
-                    <div class="col-md-4" *ngFor="let post of user.post">
-                      <div class="border rounded">
-                        <h4>{{ post.title }}</h4>
-                        <p>{{ post.text }}</p>
-                        <p>{{ post.date }}</p>
-                        <button
-                          class="btn btn-outline-info mr-2"
-                          [routerLink]="['/post-edit', post.id]"
-                        >
-                          Editar
-                        </button>
-                        <button
-                          class="btn btn-outline-danger"
-                          [routerLink]="['/post-delete', post.id]"
-                        >
-                          Deletar
-                        </button>
+                <div class="tab-pane fade" id="minhasPostagens" role="tabpanel"
+                  aria-labelledby="nav-minhasPostagens-tab">
+                  <div class="row d-flex flex-wrap mt-3">
+                    <div class="col-md-12" *ngFor="let post of user.post">
+                      <div class="border rounded mb-5">
+                        <div class="list-group card-list-group">
+                          <div class="list-group-item py-5">
+                            <div class="d-flex justify-content-end mb-2">
+                              <span class="border border-secondary rounded px-2 d-flex align-items-center"><i class="fa fa-ellipsis-h " aria-hidden="true"></i></span>
+                            </div>
+                            <div class="media">
+
+                              <div class="media-object avatar avatar-md mr-3 ">
+                                <img class="ttt" src="{{user.photo}}" alt="foto">
+                              </div>
+                              <div class="media-body">
+                                <div class="media-heading">
+                                  <small class="float-right">{{post.date | date: 'dd/MM/yyyy'}} às {{post.date | date:
+                                    'HH:mm'}}</small>
+                                  <h4>{{user.name}}</h4>
+                                </div>
+                                <div class="font-weight-bold font-mariele-b text-break">
+                                  <h5 class="mt-3">{{post.title}}</h5>
+                                </div>
+                                <div class="text-small text-muted text-break">
+                                  <p>{{post.text}}</p>
+                                </div>
+                                <div class="text-muted text-small text-break">
+                                  <img class="w-100 mb-3 rounded"
+                                    src="https://cdn1.epicgames.com/offer/fn/PDP_2560x1440_2560x1440-bec2627607d1aeae77fc43d495900ddf"
+                                    alt="">
+                                </div>
+                                <div class='align-self-end'>
+                                  <i class="fa fa-tags radius p-2 bg-gray" aria-hidden="true"> {{post.theme.topic}}</i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="postagensTema"
-                  role="tabpanel"
-                  aria-labelledby="nav-postagensTema-tab"
-                >
+                <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
                   <!--Posts por tema-->
                   <div *ngFor="let theme of themeList" class="card-columns mt-4">
                     <h2>{{ theme.description }}</h2>
                     <div *ngFor="let item of theme.post" class="card text-center">
                       <div class="card-header text-left">
-                        <img
-                          src="{{ item.user.photo }}"
-                          width="20px"
-                          alt=""
-                          class="mr-1"
-                        />
+                        <img src="{{ item.user.photo }}" width="20px" alt="" class="mr-1" />
                         {{ item.user.name }}
                       </div>
                       <div class="card-body">
                         <h5 class="card-title mb-0">{{ item.title }}</h5>
-                        <small class="text-muted"
-                          >Tema: {{ theme.description }}</small
-                        >
+                        <small class="text-muted">Tema: {{ theme.description }}</small>
                         <p class="card-text mt-3">{{ item.text }}</p>
                         <p class="card-text">
-                          <small class="text-muted"
-                            >{{ item.date | date: "dd/MM/yyyy" }} às
-                            {{ item.date | date: "HH:mm" }}</small
-                          >
+                          <small class="text-muted">{{ item.date | date: "dd/MM/yyyy" }} às
+                            {{ item.date | date: "HH:mm" }}</small>
                         </p>
                       </div>
                     </div>
@@ -278,130 +206,10 @@
             </div>
 
             <!--Messege-->
-            <div class="list-group card-list-group">
-              <div class="list-group-item py-5">
-                <div class="media">
-                  <div
-                    style="
-                      background-image: url(https://bootdey.com/img/Content/avatar/avatar2.png);
-                    "
-                    class="media-object avatar avatar-md mr-3"
-                  ></div>
-                  <div class="media-body">
-                    <div class="media-heading">
-                      <small class="float-right">10 min</small>
-                      <h5>John Doe</h5>
-                    </div>
-                    <div class="text-muted text-small">
-                      One morning, when Gregor Samsa woke from troubled dreams,
-                      he found himself transformed in his bed into a horrible
-                      vermin. He lay on his armour-like back, and if he lifted
-                      his head a little he could see his brown belly, slightly
-                      domed and divided by arches into stiff sections
-                    </div>
-                    <div class="media-list">
-                      <div class="media mt-4">
-                        <div
-                          style="
-                            background-image: url(https://bootdey.com/img/Content/avatar/avatar3.png);
-                          "
-                          class="media-object avatar mr-3"
-                        ></div>
-                        <div class="media-body text-muted text-small">
-                          <strong class="text-dark">Serenity Mitchelle: </strong
-                          >The bedding was hardly able to cover it and seemed
-                          ready to slide off any moment. His many legs,
-                          pitifully thin compared with the size of the rest of
-                          him, waved about helplessly as he looked. "What's
-                          happened to me?" he thought. It wasn't a dream.
-                        </div>
-                      </div>
-                      <div class="media mt-4">
-                        <div
-                          style="
-                            background-image: url(https://bootdey.com/img/Content/avatar/avatar4.png);
-                          "
-                          class="media-object avatar mr-3"
-                        ></div>
-                        <div class="media-body text-muted text-small">
-                          <strong class="text-dark">Tony O'Brian: </strong>His
-                          room, a proper human room although a little too small,
-                          lay peacefully between its four familiar walls. A
-                          collection of textile samples lay spread out on the
-                          table.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item py-5">
-                <div class="media">
-                  <div
-                    style="
-                      background-image: url(https://bootdey.com/img/Content/avatar/avatar2.png);
-                    "
-                    class="media-object avatar avatar-md mr-3"
-                  ></div>
-                  <div class="media-body">
-                    <div class="media-heading">
-                      <small class="float-right text-muted">12 min</small>
-                      <h5>John Doe</h5>
-                    </div>
-                    <div class="text-muted text-small">
-                      Samsa was a travelling salesman - and above it there hung
-                      a picture that he had recently cut out of an illustrated
-                      magazine and housed in a nice, gilded frame.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item py-5">
-                <div class="media">
-                  <div
-                    style="
-                      background-image: url(https://bootdey.com/img/Content/avatar/avatar2.png);
-                    "
-                    class="media-object avatar avatar-md mr-3"
-                  ></div>
-                  <div class="media-body">
-                    <div class="media-heading">
-                      <small class="float-right text-muted">34 min</small>
-                      <h5>John Doe</h5>
-                    </div>
-                    <div class="text-muted text-small">
-                      He must have tried it a hundred times, shut his eyes so
-                      that he wouldn't have to look at the floundering legs, and
-                      only stopped when he began to feel a mild, dull pain there
-                      that he had never felt before.
-                    </div>
-                    <div class="media-list">
-                      <div class="media mt-4">
-                        <div
-                          style="
-                            background-image: url(https://bootdey.com/img/Content/avatar/avatar3.png);
-                          "
-                          class="media-object avatar mr-3"
-                        ></div>
-                        <div class="media-body text-muted text-small">
-                          <strong class="text-dark">Javier Gregory: </strong>One
-                          morning, when Gregor Samsa woke from troubled dreams,
-                          he found himself transformed in his bed into a
-                          horrible vermin. He lay on his armour-like back, and
-                          if he lifted his head a little he could see his brown
-                          belly, slightly domed and divided by arches into stiff
-                          sections
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            <form class="card"></form>
           </div>
-          <form class="card"></form>
         </div>
       </div>
     </div>
   </div>
-</div>
