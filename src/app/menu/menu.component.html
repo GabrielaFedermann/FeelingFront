@@ -5,7 +5,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a [routerLink]="['/user-edit', idUser]" class="nav-link font text-dark p-0 ml-3">Feeling
+        <a routerLink="/home" class="nav-link font text-dark p-0 ml-3">Feeling
           <span
             class="sr-only">(current)</span></a>
     </ul>
@@ -15,7 +15,7 @@
         Configurações <i class="fa fa-cog" aria-hidden="true"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item pointer" href="#">Perfil</a>
+        <a class="dropdown-item pointer" [routerLink]="['user-edit', idUser]">Perfil</a>
         <a class="dropdown-item pointer" (click)="logout()" >Sair </a>
         
       </div>

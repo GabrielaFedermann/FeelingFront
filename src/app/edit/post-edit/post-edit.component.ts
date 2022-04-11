@@ -30,7 +30,7 @@ export class PostEditComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '') {
       this.alertService.showAlertWarning('Sua sessão expirou, por favor faça login novamente!');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/entrar']);
     }
 
     window.scroll(0, 0);
