@@ -12,19 +12,18 @@ import { ThemeService } from '../service/theme.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   post: Post = new Post();
   posts: Post[];
 
   themeList: Theme[];
-  theme: Theme = new Theme;
+  theme: Theme = new Theme();
   idTheme: number;
 
   user: UserModel = new UserModel();
   idUser = environment.id;
-
 
   photo = environment.photo;
 
@@ -34,20 +33,21 @@ export class HomeComponent implements OnInit {
     private themeService: ThemeService,
     private authService: AuthService,
     private alertService: AlertsService
-  ) { }
-
+  ) {}
 
   ngOnInit() {
     if (environment.token == '') {
-      this.alertService.showAlertWarning('Sua sessão expirou :(  faça login novamente!! :) ');
+      this.alertService.showAlertWarning(
+        'Sua sessão expirou :(  faça login novamente!! :) '
+      );
       this.route.navigate(['/entrar']);
     }
     this.themeService.refreshToken();
     this.authService.refreshToken();
     this.postService.refreshToken();
-    this.getAllTheme()
-    this.findByIdUser()
-    this.getAllPosts()
+    this.getAllTheme();
+    this.findByIdUser();
+    this.getAllPosts();
   }
 
   getAllTheme() {
@@ -58,17 +58,24 @@ export class HomeComponent implements OnInit {
   findByIdTheme() {
     this.themeService.getByIdTheme(this.idTheme).subscribe((resp: Theme) => {
       this.theme = resp;
-    })
+    });
   }
   getAllPosts() {
     this.postService.getAllPost().subscribe((resp: Post[]) => {
       this.posts = resp;
-    })
+
+      this.posts.forEach((element) => {
+        if (element.anonymous == true) {
+          element.user.name = 'Anônimo';
+          element.user.photo = '../../../assets/img/user_placeholder.png';
+        }
+      });
+    });
   }
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: UserModel) => {
       this.user = resp;
-    })
+    });
   }
   publish() {
     this.theme.id = this.idTheme;
@@ -79,7 +86,9 @@ export class HomeComponent implements OnInit {
 
     this.postService.postPost(this.post).subscribe((resp: Post) => {
       this.post = resp;
-      this.alertService.showAlertSuccess('Postagem realizada com sucesso!!! :D');
+      this.alertService.showAlertSuccess(
+        'Postagem realizada com sucesso!!! :D'
+      );
 
       this.getAllPosts();
       this.findByIdUser();
