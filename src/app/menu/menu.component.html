@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-color p-0">
- 
+
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -15,9 +15,9 @@
         Configurações <i class="fa fa-cog" aria-hidden="true"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item pointer" [routerLink]="['user-edit', idUser]">Perfil</a>
+        <a class="dropdown-item pointer" [routerLink]="['user-edit', idUser]" (click)="edit()">Perfil</a>
         <a class="dropdown-item pointer" (click)="logout()" >Sair </a>
-        
+
       </div>
     </div>
 

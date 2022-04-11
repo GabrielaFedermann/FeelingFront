@@ -51,8 +51,32 @@ export class CadastrarComponent implements OnInit {
     let regex = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}'
     if (this.user.email.match(regex)) {
       txt.innerHTML = 'Email válido'
+      txt.style.color = 'green'
     } else {
-      txt.innerHTML = 'Email inválido, meu bom'
+      txt.innerHTML = 'Email inválido'
+      txt.style.color = 'red'
+    }
+  }
+
+  validPassword(){
+    let txt = (<HTMLDivElement>document.querySelector('#txtPassword'))
+    if (this.password.length >= 6) {
+      txt.innerHTML = 'Senha válida'
+      txt.style.color = 'green'
+    } else {
+      txt.innerHTML = 'Senha inválida, deve ter no mínimo 6 caracteres'
+      txt.style.color = 'red'
+    }
+  }
+
+  validPass(){
+    let txt = (<HTMLDivElement>document.querySelector('#txtPass'))
+    if (this.password == this.user.password) {
+      txt.innerHTML = 'Senhas coincidem'
+      txt.style.color = 'green'
+    } else {
+      txt.innerHTML = 'Senhas não coincidem'
+      txt.style.color = 'red'
     }
   }
 }
