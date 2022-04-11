@@ -18,7 +18,8 @@
                     <div class="form-group">
 
                         <label for="usuario">Usuário</label>
-                        <input [(ngModel)]="user.email" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu E-mail">
+                        <input [(ngModel)]="user.email" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu E-mail" (input)="validEmail()">
+                        <div id="txtUser"></div>
                     </div>
                     
                     <div> </div>

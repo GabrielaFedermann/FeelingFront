@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     environment.name = '';
     environment.id = 0;
     environment.photo = '';
-    this.route.navigate(['/login']);
+    this.route.navigate(['/entrar']);
     this.alertService.showAlertWarning('Sessão encerrada');
   }
 }
