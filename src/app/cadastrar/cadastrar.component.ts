@@ -45,4 +45,14 @@ export class CadastrarComponent implements OnInit {
       });
     }
   }
+
+  validEmail(){
+    let txt = (<HTMLDivElement>document.querySelector('#txtUser'))
+    let regex = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}'
+    if (this.user.email.match(regex)) {
+      txt.innerHTML = 'Email válido'
+    } else {
+      txt.innerHTML = 'Email inválido, meu bom'
+    }
+  }
 }

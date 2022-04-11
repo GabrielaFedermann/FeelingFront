@@ -6,6 +6,10 @@
     background-size: cover;
 }
 
+body {
+    overflow: hidden;
+}
+
 h3 {
     font-family: 'Allura', cursive;
     margin: 0;
@@ -17,7 +21,7 @@ h3 {
 }
 
 .tam {
-    height: 90vh;
+    height: 77vh;
 }
 
 .bg {

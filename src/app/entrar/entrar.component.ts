@@ -22,6 +22,10 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    environment.token = '';
+    environment.name = '';
+    environment.id = 0;
+    environment.photo = '';
   }
 
   enter() {
