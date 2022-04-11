@@ -25,5 +25,14 @@
     font-weight: 400;
 }
 
+.cancelar{
+    background-color: #d66da0;;
+    color: white;
+}
+
+.enviar{
+    background-color: #98c589;
+    color:white
+}
 
 

@@ -32,42 +32,42 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog"
+            <div class="modal fade " id="novaPostagem" tabindex="-1" role="dialog"
               aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+              <div class="modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content post bordamodal">
                   <div class="modal-header">
                     <h5 class="modal-title" id="TituloModalCentralizado">
                       Nova postagem
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <button type="button" class="close " data-dismiss="modal" aria-label="Fechar">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-group font">
                       <label for="titulo">Título</label>
-                      <input [(ngModel)]="post.title" type="text" class="form-control" id="titulo"
+                      <input [(ngModel)]="post.title" type="text" class="form-control borda" id="titulo"
                         placeholder="Digite o título" />
                     </div>
 
                     <div class="form-group">
                       <label for="texto">Texto</label>
-                      <textarea [(ngModel)]="post.text" class="form-control" name="" id="texto" rows="3"></textarea>
+                      <textarea [(ngModel)]="post.text" class="form-control borda" name="" id="texto" rows="3"></textarea>
                     </div>
 
                     <div>
                       <label for="">Foto</label>
-                      <input [(ngModel)]="post.picture" type="text" class="form-control" id="foto"
+                      <input [(ngModel)]="post.picture" type="text" class="form-control borda mb-3" id="foto"
                         placeholder="Link da foto (opcional)" name="foto" />
                     </div>
 
                     <div class="form-group">
                       <label for="texto">Escolha um tema ou
-                        <a data-dismiss="modal" routerLink="/theme">cadastre um novo</a>:
+                        <a data-dismiss="modal" class="white"  routerLink="/theme">cadastre um novo</a>:
                       </label>
-                      <select [(ngModel)]="idTheme" (change)="findByIdTheme()" name="tema" id="tema"
-                        class="form-control">
+                      <select [(ngModel)]="idTheme" (change)="findByIdTheme()" name="tema" id="tema "
+                        class="form-control borda">
                         <option selected disabled value="">Temas</option>
                         <option *ngFor="let theme of themeList" value="{{ theme.id }}">
                           {{ theme.topic }}
@@ -75,11 +75,11 @@
                       </select>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                  <div class="modal-footer borda">
+                    <button type="button" class="btn cancelar mr-2" data-dismiss="modal">
                       Cancelar
                     </button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)="publish()">
+                    <button type="button" class="btn enviar" data-dismiss="modal" (click)="publish()">
                       Publicar
                     </button>
                   </div>
