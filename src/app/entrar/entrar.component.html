@@ -19,33 +19,33 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content entrarform borda">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <h5 class="modal-title pink" id="exampleModalLabel">Login</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body ">
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">E-mail</label>
-                            <input [(ngModel)]="userLogin.email" type="email" class="form-control" id="exampleInputEmail1"
+                            <input [(ngModel)]="userLogin.email" type="email" class="form-control borda" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Digite seu e-mail" name="email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Senha</label>
-                            <input [(ngModel)]="userLogin.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" name="password">
+                            <input [(ngModel)]="userLogin.password" type="password" class="form-control borda" id="exampleInputPassword1" placeholder="Digite sua senha" name="password">
                         </div>
                         <div class="form-group form-check">
 
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="enter()" data-dismiss="modal">Entrar</button>
+                        <button type="submit" class="btn enviar borda" (click)="enter()" data-dismiss="modal">Enviar</button>
 
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <p>Não tem conta? <a href="/cadastrar">Cadastre-se</a></p>
+                    <p>Não tem conta? <a href="/cadastrar" class="cadastrese">Cadastre-se</a></p>
                 </div>
             </div>
         </div>

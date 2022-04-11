@@ -88,3 +88,36 @@ background-color: var(--color-purple);
     font-family: 'Merriweather', serif;
     font-weight: 700;
 }
+
+.entrarform{
+    color: rgb(255, 255, 255);            
+    font-family: 'Merriweather', serif;
+    background:  #bab5dbcb;
+    backdrop-filter: blur (10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.enviar{
+    color: black;
+    width: 130px;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    border: 1px solid  #ec68a8;
+    background-color: #e2a3c1;
+}
+
+.cadastrese{
+    color: black;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+}
+
+.pink{
+    color:black;
+    font-family: 'Merriweather', serif;
+    width: 700;
+}
+
+.borda{
+    border-radius: 10px;
+}
