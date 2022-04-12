@@ -82,7 +82,7 @@ background-color: var(--color-purple);
 }
 
 .entrarform{
-    color: rgb(255, 255, 255);            
+    color: rgb(255, 255, 255);
     font-family: 'Merriweather', serif;
     background:  #bab5dbcb;
     backdrop-filter: blur (10px);
@@ -126,4 +126,42 @@ background-color: var(--color-purple);
 }
 .fa-linkedin-square:hover {
     color: #0e76a8
+}
+
+.bg-color{
+  background-color: var(--color-purple);
+}
+
+ul.social-media{
+  list-style: none;
+  padding: 0%;
+}
+
+ul.social-media li{
+  display: inline;
+  margin: 0%;
+  padding: 5px;
+
+}
+
+.fa{
+  font-size: 35pt;
+  color: rgb(49, 49, 49);
+  padding: 10px;
+}
+
+.fa-github-square:hover{
+  color: #596275
+}
+
+.fa-instagram:hover{
+  color: #C13584
+}
+
+.fa-linkedin-square:hover{
+  color: #0e76a8
+}
+
+.font{
+  font-family: 'Merriweather', serif;
 }
