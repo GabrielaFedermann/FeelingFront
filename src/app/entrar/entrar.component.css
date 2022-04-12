@@ -124,5 +124,17 @@ background-color: var(--color-purple);
 }
 
 .teste {
-    height: 70%;
+    height: 77vh;
 }
+
+.icones {
+    width: 50px;
+}
+
+.fa-github-square:hover {
+    color: #596275;
+}
+.fa-linkedin-square:hover {
+    color: #0e76a8
+}
+
