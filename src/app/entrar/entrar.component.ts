@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { UserLoginDTO } from '../model/UserLoginDTO';
 import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
+import { EmailService } from '../service/email.service';
 
 @Component({
   selector: 'app-entrar',
@@ -17,7 +18,8 @@ export class EntrarComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private route: Router,
-    private alertService: AlertsService
+    private alertService: AlertsService,
+    private email:EmailService,
   ) { }
 
   ngOnInit() {
@@ -41,11 +43,15 @@ export class EntrarComponent implements OnInit {
         this.route.navigate(['/home'])
       },
       error: erro => {
-        if (erro.status == 401) {
+        if (erro.status == 401 || erro.status == 404) {
           this.alertService.showAlertDanger('Usuario ou senha incorretos!')
         }
       }
     })
+  }
+
+  sendEmail(){
+    this.email.sendEmail()
   }
 
 }
