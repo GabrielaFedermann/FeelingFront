@@ -95,7 +95,7 @@ export class UserEditComponent implements OnInit {
   update() {
     this.user.type = this.tyUser;
     console.log(this.user);
-    if (this.user.password != this.confPassword) {
+    if (this.user.password != this.password) {
       this.alertService.showAlertDanger('As senhas não coincidem.');
     } else {
       this.authService.update(this.user).subscribe((resp: UserModel) => {
