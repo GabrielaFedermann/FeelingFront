@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Email } from '../model/Email';
 import { UserLoginDTO } from '../model/UserLoginDTO';
 import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 import { EmailService } from '../service/email.service';
+
 
 @Component({
   selector: 'app-entrar',
@@ -14,12 +16,14 @@ import { EmailService } from '../service/email.service';
 export class EntrarComponent implements OnInit {
 
   userLogin: UserLoginDTO = new UserLoginDTO()
+  emailModel: Email = new Email();
 
   constructor(
     private auth: AuthService,
     private route: Router,
     private alertService: AlertsService,
     private email:EmailService,
+   // private toastr:ToastrService
   ) { }
 
   ngOnInit() {
@@ -51,7 +55,13 @@ export class EntrarComponent implements OnInit {
   }
 
   sendEmail(){
-    this.email.sendEmail()
+    this.email.sendEmail(this.emailModel).subscribe((resp)=>{
+      if(resp==='Mensagem enviada com sucesso!'){
+        console.log('Deu certo!')
+      }else {
+        console.log('Deu ruim!'+resp)
+      }
+    })
   }
 
 }

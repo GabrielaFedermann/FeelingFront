@@ -80,7 +80,7 @@ background-color: var(--color-purple);
 
 .fontb{
     font-family: 'Merriweather', serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .enviarc{
@@ -142,6 +142,10 @@ background-color: var(--color-purple);
   background-color: var(--color-purple);
 }
 
+.bg-color2{
+    background-color: var(--color-primary);
+}
+
 ul.social-media{
   list-style: none;
   padding: 0%;
@@ -175,3 +179,13 @@ ul.social-media li{
 .font{
   font-family: 'Merriweather', serif;
 }
+
+.sizeImg{
+    width: 150px;
+}
+
+.size-names{
+    font-size: 40px;
+    font-weight: bold;
+}
+

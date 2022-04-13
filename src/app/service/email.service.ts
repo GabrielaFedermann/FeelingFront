@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "src/environments/environment.prod";
+import { Email } from "../model/Email";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,8 @@ export class EmailService {
   }
 
 
-  sendEmail(){
-    return this.http.get<any>('https://localhost:8080/send-email')
+  sendEmail(email:Email):Observable<string>{
+    return this.http.post<string>('http://localhost:8080/send-email', email)
   }
 
   logado() {
@@ -32,4 +34,5 @@ export class EmailService {
   }
 
 
+  
 }

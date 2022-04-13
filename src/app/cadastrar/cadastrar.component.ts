@@ -13,6 +13,7 @@ export class CadastrarComponent implements OnInit {
   user: UserModel = new UserModel();
   password: string;
   type: string;
+  
 
   constructor(
     private auth: AuthService,
